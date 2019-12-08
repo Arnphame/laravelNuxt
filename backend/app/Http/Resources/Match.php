@@ -4,7 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class User extends JsonResource
+class Match extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -15,12 +15,11 @@ class User extends JsonResource
     public function toArray($request)
     {
         return [
-          'name' => $this->name,
-          'email' => $this->email,
-          'created_at' => $this->created_at,
-          'role' => $this->role,
-          'games_played' => $this->games_played,
-          'badge' => $this->badge,
+          'id' => $this->id,
+          'game_id' => $this->game_id,
+          'team' => $this->team,
+          'players' => User::collection($this->players),
+
         ];
     }
 }

@@ -20,6 +20,8 @@ class CreateUsersTable extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->integer('role');
+            $table->integer('games_played')->default(0);
+            $table->string('badge')->default("Bronze");
             $table->rememberToken();
             $table->timestamps();
         });

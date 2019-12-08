@@ -17,7 +17,11 @@ class Game extends Model
 
     public function addUser($user)
     {
-        $this->users()->create($user);
+        $this->users()->attach($user);
+    }
+    public function removeUser($user)
+    {
+        $this->users()->detach($user);
     }
 
     public function hasUser($user)

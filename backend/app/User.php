@@ -17,7 +17,7 @@ class User extends Authenticatable implements JWTSubject
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'role'
+        'name', 'email', 'password', 'role',
     ];
 
     /**
@@ -41,6 +41,29 @@ class User extends Authenticatable implements JWTSubject
     public function games()
     {
         return $this->belongsToMany(Game::class);
+    }
+    public function matches()
+    {
+        return $this->belongsToMany(Match::class);
+    }
+    public function addGamesPlayed()
+    {
+        $this->games_played = $this->games_played + 1;
+    }
+    public function changeBadge()
+    {
+        if($this->games_played == 10) {
+            $this->badge = "Silver";
+        }
+        if($this->games_played == 20) {
+            $this->badge = "Gold";
+        }
+        if($this->games_played == 30) {
+            $this->badge = "Diamond";
+        }
+        if($this->games_played == 40) {
+            $this->badge = "Platinum";
+        }
     }
 
     /**

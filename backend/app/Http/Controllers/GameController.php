@@ -5,7 +5,9 @@ namespace App\Http\Controllers;
 use App\Game;
 use App\Http\Requests\GameCreateRequest;
 use App\Http\Requests\GameUpdateRequest;
+use App\Http\Requests\JoinGameRequest;
 use App\Http\Resources\Game as GameResource;
+use App\User;
 use Illuminate\Http\Request;
 
 class GameController extends Controller
@@ -15,6 +17,15 @@ class GameController extends Controller
         $games = Game::paginate(5);
 
         return GameResource::collection($games);
+    }
+
+    public function showMyGames(Request $request)
+    {
+        $user = $request->user();
+        $games = $user->games()->get();
+        //var_dump($games);
+
+        return response(GameResource::collection($games), 200);
     }
 
 
@@ -27,11 +38,12 @@ class GameController extends Controller
 
         $game->save();
 
-        return new GameResource($game);
+        return response(new GameResource($game), 200);
     }
 
     public function show(Game $game)
     {
+        $this->complete($game);
         return new GameResource($game);
     }
 
@@ -52,5 +64,41 @@ class GameController extends Controller
         //$this->authorize('destroy', $game);
         $game->delete();
         return response(null, 204);
+    }
+
+    public function join(Request $request, Game $game)
+    {
+        if(!$game->hasUser($request->user()->id)) {
+            $game->addUser([$request->user()->id]);
+            return response(null, 204);
+        }
+            return response(null, 409);
+    }
+    public function leave(Request $request, Game $game)
+    {
+        if($game->hasUser($request->user()->id)) {
+            $game->removeUser([$request->user()->id]);
+            return response(null, 204);
+        }
+        return response(null, 409);
+    }
+
+    public function complete(Game $game)
+    {
+        $now = date("Y-m-d H:i:s");
+        $date = date("Y-m-d H:i:s", strtotime('+2 hour', strtotime($now)));
+
+
+        if($date >= $game->start_at && $game->status != "COMPLETED") {
+            $game->update(['status' => 'COMPLETED']);
+            $users = $game->users()->get();
+            foreach ($users as $user) {
+                $user->addGamesPlayed();
+                $user->changeBadge();
+                $user->save();
+                //$user->update(['games_played' => $user->games_played + 1]);
+            }
+            $game->save();
+        }
     }
 }
