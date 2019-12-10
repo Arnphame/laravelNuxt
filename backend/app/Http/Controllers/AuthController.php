@@ -10,44 +10,56 @@ use Illuminate\Http\Request;
 
 class AuthController extends Controller
 {
-    public function register(UserRegisterRequest $request) {
+    public function register(UserRegisterRequest $request)
+    {
 
-        $user = User::create([
+        $user = User::create(
+            [
             'email' => $request->email,
             'name' => $request->name,
             'password' => bcrypt($request->password),
             'role' => 0,
-        ]);
+            ]
+        );
 
         if (!$token = auth() -> attempt($request->only(['email', 'password']))) {
             return abort(401);
         }
 
-        return (new UserResource($request->user()))->additional([
+        return (new UserResource($request->user()))->additional(
+            [
             'meta' => [
                 'token' => $token
             ]
-        ]);
+            ]
+        );
     }
 
-    public function login(UserLoginRequest $request) {
+    public function login(UserLoginRequest $request)
+    {
         if (!$token = auth() -> attempt($request->only(['email', 'password']))) {
-            return response()->json([
+            return response()->json(
+                [
                 'errors' => [
                     'password' => ['Your email or password is incorrect.']
                 ]
-            ], 422);
+                ], 422
+            );
         }
-        return (new UserResource($request->user()))->additional([
+        return (new UserResource($request->user()))->additional(
+            [
             'meta' => [
                 'token' => $token
             ]
-        ]);
+            ]
+        );
     }
-    public function user(Request $request) {
+    public function user(Request $request)
+    {
         return new UserResource($request->user());
     }
-    public function logout() {
+    public function logout()
+    {
         auth()->logout();
     }
 }
