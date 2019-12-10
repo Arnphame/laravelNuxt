@@ -28,5 +28,10 @@ class Game extends Model
     {
         return $this->users()->find($user);
     }
+
+    public function matches()
+    {
+        return $this->hasMany(Match::class);
+    }
     //
 }

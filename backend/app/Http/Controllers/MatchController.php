@@ -20,7 +20,7 @@ class MatchController extends Controller
     }
 
 
-    public function store(Request $request, $game, $user)
+    public function store(Request $request, $game)
     {
         $match = new Match;
         $match->team = $request->team;

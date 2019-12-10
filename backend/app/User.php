@@ -46,6 +46,10 @@ class User extends Authenticatable implements JWTSubject
     {
         return $this->belongsToMany(Match::class);
     }
+    public function deleteFromMatch($user)
+    {
+        return $this->matches()->detach($user);
+    }
     public function addGamesPlayed()
     {
         $this->games_played = $this->games_played + 1;
