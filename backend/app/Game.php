@@ -28,5 +28,4 @@ class Game extends Model
     {
         return $this->users()->find($user);
     }
-    //
 }

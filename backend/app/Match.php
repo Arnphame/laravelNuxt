@@ -14,7 +14,8 @@ class Match extends Model
     {
         return $this->belongsToMany(User::class);
     }
-    public function game() {
+    public function game()
+    {
         return $this->belongsTo(Game::class);
     }
 

@@ -40,7 +40,7 @@ class MatchController extends Controller
             $match->save();
             return response(null, 204);
         }
-        return response(null,409);
+        return response(null, 409);
     }
 
     public function show($game, Match $match)

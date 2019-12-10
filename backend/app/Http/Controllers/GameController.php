@@ -23,7 +23,6 @@ class GameController extends Controller
     {
         $user = $request->user();
         $games = $user->games()->get();
-        //var_dump($games);
 
         return response(GameResource::collection($games), 200);
     }
@@ -38,7 +37,7 @@ class GameController extends Controller
 
         $game->save();
 
-        return response(new GameResource($game), 200);
+        return response(new GameResource($game), 201);
     }
 
     public function show(Game $game)
@@ -49,7 +48,6 @@ class GameController extends Controller
 
     public function update(GameUpdateRequest $request, Game $game)
     {
-        //$this->authorize('update', $game);
         $game->location = $request->get('location', $game->location);
         $game->start_at = $request->get('start_at', $game->start_at);
         $game->status = $request->get('status', $game->status);
@@ -61,7 +59,6 @@ class GameController extends Controller
 
     public function destroy(Game $game)
     {
-        //$this->authorize('destroy', $game);
         $game->delete();
         return response(null, 204);
     }
@@ -88,7 +85,6 @@ class GameController extends Controller
         $now = date("Y-m-d H:i:s");
         $date = date("Y-m-d H:i:s", strtotime('+2 hour', strtotime($now)));
 
-
         if($date >= $game->start_at && $game->status != "COMPLETED") {
             $game->update(['status' => 'COMPLETED']);
             $users = $game->users()->get();
@@ -96,7 +92,6 @@ class GameController extends Controller
                 $user->addGamesPlayed();
                 $user->changeBadge();
                 $user->save();
-                //$user->update(['games_played' => $user->games_played + 1]);
             }
             $game->save();
         }
