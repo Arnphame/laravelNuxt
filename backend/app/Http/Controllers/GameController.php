@@ -67,9 +67,9 @@ class GameController extends Controller
     {
         if(!$game->hasUser($request->user()->id)) {
             $game->addUser([$request->user()->id]);
-            return response(null, 204);
+            return response("success", 204);
         }
-            return response(null, 409);
+            return response("failed", 409);
     }
     public function leave(Request $request, Game $game)
     {
