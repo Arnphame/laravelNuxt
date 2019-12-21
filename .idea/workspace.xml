@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="fb4bd46c-2d6d-4b97-9392-d588ac496c57" name="Default Changelist" comment="">
+<<<<<<< HEAD
       <change afterPath="$PROJECT_DIR$/frontend/components/Navbar.vue" afterDir="false" />
+=======
+<<<<<<< HEAD
+=======
+>>>>>>> 4dafe88cc6ec82ce65d9d6f27905a4fc038a27ad
       <change afterPath="$PROJECT_DIR$/frontend/middleware/clearValidationErrors.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/frontend/middleware/guest.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/frontend/pages/games/_id/index.vue" afterDir="false" />
@@ -15,11 +20,34 @@
       <change afterPath="$PROJECT_DIR$/frontend/plugins/mixins/validation.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/frontend/store/auth.js" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/frontend/store/validation.js" afterDir="false" />
+>>>>>>> 63fc4363079e87c7b699acd17b009c2c145604b1
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/Game.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Game.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/GameController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/GameController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/app/Http/Controllers/MatchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Controllers/MatchController.php" afterDir="false" />
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/backend/app/Http/Resources/Game.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Resources/Game.php" afterDir="false" />
+=======
+<<<<<<< HEAD
+      <change beforePath="$PROJECT_DIR$/backend/app/Http/Resources/Game.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Http/Resources/Game.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/public/.htaccess" beforeDir="false" afterPath="$PROJECT_DIR$/backend/public/.htaccess" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/routes/api.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/storage/app/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/storage/app/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/storage/app/public/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/storage/app/public/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/storage/framework/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/storage/framework/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/storage/framework/cache/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/storage/framework/cache/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/storage/framework/cache/data/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/storage/framework/cache/data/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/storage/framework/sessions/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/storage/framework/sessions/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/storage/framework/testing/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/storage/framework/testing/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/storage/framework/views/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/storage/framework/views/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/storage/logs/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/backend/storage/logs/.gitignore" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/backend/app/Match.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/Match.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/app/User.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/backend/tests/Unit/UserTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/backend/tests/Unit/UserTest.php" afterDir="false" />
+>>>>>>> 63fc4363079e87c7b699acd17b009c2c145604b1
+>>>>>>> 4dafe88cc6ec82ce65d9d6f27905a4fc038a27ad
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -29,6 +57,11 @@
   </component>
   <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/backend/composer.json</pharConfigPath>
+<<<<<<< HEAD
+    <execution>
+      <executable />
+    </execution>
+=======
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
@@ -124,6 +157,7 @@
         </entry>
       </file>
     </leaf>
+>>>>>>> 63fc4363079e87c7b699acd17b009c2c145604b1
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
@@ -138,6 +172,8 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/frontend" />
   </component>
+<<<<<<< HEAD
+=======
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -173,6 +209,7 @@
       </list>
     </option>
   </component>
+>>>>>>> 63fc4363079e87c7b699acd17b009c2c145604b1
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
       <path value="$PROJECT_DIR$/backend/vendor/theseer/tokenizer" />
@@ -270,6 +307,12 @@
       <path value="$PROJECT_DIR$/backend/vendor/asm89/stack-cors" />
     </include_path>
   </component>
+<<<<<<< HEAD
+  <component name="ProjectId" id="1UiMbMwfFfHUZYUL0fDTfd8mxU4" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+=======
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="-8" />
     <option name="y" value="-8" />
@@ -348,15 +391,26 @@
       <pane id="Scope" />
     </panes>
   </component>
+>>>>>>> 63fc4363079e87c7b699acd17b009c2c145604b1
   <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="editor.config.ad.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
+<<<<<<< HEAD
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.standard" value="project" />
     <property name="node.js.selected.package.eslint" value="C:\xampp\htdocs\LaravelNuxt\frontend\node_modules\eslint" />
     <property name="node.js.selected.package.standard" value="" />
+=======
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="C:/xampp/htdocs/LaravelNuxt/frontend/node_modules/eslint" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+>>>>>>> 4dafe88cc6ec82ce65d9d6f27905a4fc038a27ad
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
   </component>
@@ -383,6 +437,25 @@
       <option name="presentableId" value="Default" />
       <updated>1575801456698</updated>
       <workItem from="1575801464116" duration="12923000" />
+<<<<<<< HEAD
+      <workItem from="1575835040525" duration="3489000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+=======
       <workItem from="1575883554282" duration="769000" />
       <workItem from="1575974945792" duration="3407000" />
       <workItem from="1576000805490" duration="2761000" />
@@ -743,5 +816,6 @@
         </state>
       </provider>
     </entry>
+>>>>>>> 63fc4363079e87c7b699acd17b009c2c145604b1
   </component>
 </project>

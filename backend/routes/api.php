@@ -18,8 +18,8 @@ use Illuminate\Http\Request;
 
 Route::post('/register', 'AuthController@register');
 Route::post('/login ', 'AuthController@login');
-Route::get('/user', 'AuthController@user');
-Route::post('/logout', 'AuthController@logout');
+Route::get('/user', 'AuthController@user')->middleware('auth:api');
+Route::post('/logout', 'AuthController@logout')->middleware('auth:api');
 
 Route::group(['prefix' => 'games'], function() {
     Route::post('/', 'GameController@store')->middleware('auth:api')->middleware('auth.role:1');

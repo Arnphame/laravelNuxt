@@ -7,6 +7,7 @@ use App\Http\Requests\GameCreateRequest;
 use App\Http\Requests\GameUpdateRequest;
 use App\Http\Requests\JoinGameRequest;
 use App\Http\Resources\Game as GameResource;
+use App\Match;
 use App\User;
 use Illuminate\Http\Request;
 
@@ -75,6 +76,7 @@ class GameController extends Controller
     {
         if($game->hasUser($request->user()->id)) {
             $game->removeUser([$request->user()->id]);
+            $request->user()->deleteFromMatch([$request->user()->id]);
             return response(null, 204);
         }
         return response(null, 409);

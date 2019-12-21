@@ -18,9 +18,9 @@
         </tr>
       </tbody>
     </table>
+
   </div>
 </template>
-
 
 <script>
   export default {
@@ -42,12 +42,9 @@
 
         return this.games.data = {...this.games.data, ...data}
       },
+
     }
   }
+}
 </script>
 
-<style>
-  .players {
-    border-left: 10px solid white;
-  }
-</style>

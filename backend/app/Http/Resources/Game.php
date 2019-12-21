@@ -4,6 +4,7 @@ namespace App\Http\Resources;
 
 use Illuminate\Http\Resources\Json\JsonResource;
 use App\Http\Resources\User as UserResource;
+use App\Http\Resources\Match as MatchResource;
 
 class Game extends JsonResource
 {
@@ -20,7 +21,8 @@ class Game extends JsonResource
           'location' => $this->location,
           'start_at' => $this->start_at,
           'status' => $this->status,
-          'matches' => Match::collection($this->matches),
+          'matches' => MatchResource::collection($this->matches),
+          'users' => User::collection($this->users),
         ];
     }
 }
