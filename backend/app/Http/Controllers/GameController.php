@@ -15,7 +15,8 @@ class GameController extends Controller
 {
     public function index()
     {
-        $games = Game::paginate(5);
+        $games = Game::latest()->take(5)->get();
+
 
         return GameResource::collection($games);
     }

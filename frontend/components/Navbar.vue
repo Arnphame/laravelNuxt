@@ -1,9 +1,9 @@
 <template>
   <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
 
-    <nuxt-link to="/" class="navbar-brand">
+    <router-link to="/" class="navbar-brand">
       Frontend
-    </nuxt-link>
+    </router-link>
     <button
       class="navbar-toggler"
       type="button"
@@ -21,14 +21,14 @@
 
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <nuxt-link to="/" class="nav-link">
+          <router-link to="/" class="nav-link">
             Home
-          </nuxt-link>
+          </router-link>
         </li>
         <li class="nav-item">
-          <nuxt-link to="/games" class="nav-link">
+          <router-link to="/games" class="nav-link">
             Games
-          </nuxt-link>
+          </router-link>
         </li>
       </ul>
 
@@ -61,10 +61,11 @@
             <div>
               <b-button v-b-modal.modal-1>{{ user.name }}</b-button>
               <b-modal id="modal-1" :title="user.name + ' information'" hide-footer>
-                <p class="my-4">Email: {{ user.email }}</p>
-                <p class="my-4">Role: {{ user.role }}</p>
-                <p class="my-4">Games played: {{ user.games_played }}</p>
-                <p class="my-4">Badge: {{ user.badge }}</p>
+                <p class="my-4"><b>Email</b>: {{ user.email }}</p>
+                <p class="my-4" v-if="user.role === 1"><b>Role</b>: Administrator</p>
+                <p class="my-4" v-if="user.role === 0"><b>Role</b>: User</p>
+                <p class="my-4"><b>Games played</b>: {{ user.games_played }}</p>
+                <p class="my-4"><b>Badge</b>: {{ user.badge }}</p>
               </b-modal>
             </div>
           </li>

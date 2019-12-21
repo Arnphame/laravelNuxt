@@ -24,7 +24,7 @@
       </tr>
       </tbody>
     </table>
-    <div>
+    <div v-if="game.status !== 'COMPLETED'">
       <button v-if="!gameHasUser" @click="joinGame(game)" type="button" class="btn btn-success">
         Join game
       </button>
@@ -37,7 +37,7 @@
           <button class="btn btn-outline-success fa fa-edit fa-2x pull-right"></button>
         </nuxt-link>
     </div>
-  </div>
+    </div>
   </div>
 
 </template>

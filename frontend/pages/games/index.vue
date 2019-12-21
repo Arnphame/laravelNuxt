@@ -42,9 +42,7 @@
 
         return this.games.data = {...this.games.data, ...data}
       },
-
     }
-  }
 }
 </script>
 
