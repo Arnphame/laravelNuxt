@@ -22,6 +22,7 @@ class Game extends JsonResource
           'start_at' => $this->start_at,
           'status' => $this->status,
           'matches' => MatchResource::collection($this->matches),
+          'users' => User::collection($this->users),
         ];
     }
 }
