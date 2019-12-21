@@ -25,7 +25,7 @@ class GameUpdateRequest extends FormRequest
     {
         return [
             'location' => 'required',
-            'start_at' => 'required|date_format:Y-m-d H:i|after:today',
+            'start_at' => 'required|after:today',
         ];
     }
 }

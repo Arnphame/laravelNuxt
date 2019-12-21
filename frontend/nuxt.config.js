@@ -17,6 +17,7 @@ export default {
         href:
           'https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css'
       },
+        { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css?family=Montserrat' },
       {
         rel: "stylesheet",
         href:
@@ -48,10 +49,13 @@ export default {
   ** Global CSS
   */
   css: [
+    '@/assets/style.css'
   ],
 
   router: {
-    middleware: ['clearValidationErrors']
+    middleware: ['clearValidationErrors'],
+    linkActiveClass: 'active-link',
+    linkExactActiveClass: 'exact-active-link',
   },
   /*
   ** Plugins to load before mounting the App

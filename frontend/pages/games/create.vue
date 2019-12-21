@@ -1,4 +1,5 @@
 <template>
+  <body>
   <div class="container mt-5">
     <h2>Create a new game</h2>
     <br>
@@ -10,7 +11,7 @@
       </div>
       <div class="form-group">
         <label><strong>Starts at:</strong></label>
-        <textarea v-model="form.start_at" class="form-control" rows="5" />
+        <input type="datetime-local" v-model="form.start_at" class="form-control"/>
         <!-- needs fix -->
         <small v-if="errors.start_at" class="form-text text-danger">{{ errors.start_at[0] }}</small>
       </div>
@@ -19,6 +20,7 @@
       </button>
     </form>
   </div>
+  </body>
 </template>
 
 <script>

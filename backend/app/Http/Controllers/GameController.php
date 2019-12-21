@@ -32,9 +32,10 @@ class GameController extends Controller
 
     public function store(GameCreateRequest $request)
     {
+        $date = date('Y-m-d, h:i',strtotime($request->start_at));
         $game = new Game;
         $game->location = $request->location;
-        $game->start_at = $request->start_at;
+        $game->start_at = $date;
         $game->status = "ACTIVE";
 
         $game->save();

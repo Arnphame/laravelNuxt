@@ -1,8 +1,8 @@
 <template>
-  <div class="container col-md-6 mt-5">
+  <div class="container col-md-3 mt-5">
     <h1>Game #{{game.id}}</h1>
     <h1>Game status: {{game.status}}</h1>
-    <table class="table table-bordered">
+    <table class="table table-bordered" style="border-color:black !important;">
       <thead>
       <tr>
         <th>Location</th>
@@ -14,25 +14,29 @@
         <td> {{ game.location }}</td>
         <td> {{ game.start_at }}</td>
       </tr>
+      </tbody>
+    </table>
+    <table class="table table-bordered">
       <tr>
         <th>Team {{ game.matches[0].team }} players</th>
         <th>Team {{ game.matches[1].team }} players</th>
       </tr>
+      <tbody>
       <tr>
         <td>{{ game.matches[0].players[0].name }} ({{ game.matches[0].players[0].badge }})</td>
         <td>{{ game.matches[1].players[0].name }} ({{ game.matches[1].players[0].badge }})</td>
       </tr>
       </tbody>
     </table>
-    <div v-if="game.status !== 'COMPLETED'">
+    <div v-if="game.status !== 'COMPLETED' && authenticated">
       <button v-if="!gameHasUser" @click="joinGame(game)" type="button" class="btn btn-success">
         Join game
       </button>
       <button v-if="gameHasUser" @click="leaveGame(game)" type="button" class="btn btn-danger">
         Leave game
       </button>
-      <div v-if="authenticated">
-        <button v-if="user.role === 1" @click="deleteGame(game.id)" class="btn btn-outline-danger fa fa-trash fa-2x pull-right"></button>
+      <div v-if="authenticated && user.role === 1">
+        <button  @click="deleteGame(game.id)" class="btn btn-outline-danger fa fa-trash fa-2x pull-right"></button>
         <nuxt-link :to="{name: 'games-edit', params: {id: game.id}}">
           <button class="btn btn-outline-success fa fa-edit fa-2x pull-right"></button>
         </nuxt-link>

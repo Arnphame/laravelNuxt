@@ -7,7 +7,6 @@ export const getters = {
   errors(state) {
     return state.errors
   },
-  isAdmin: state => state.user.role === 1,
 
 }
 

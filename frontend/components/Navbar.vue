@@ -1,9 +1,9 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light mb-5">
+  <nav class="navbar navbar-expand-lg navbar-dark mb-5 text-white" style="z-index: 10; background-color: rgba(0,0,0,0.3)">
 
-    <router-link to="/" class="navbar-brand">
+    <nuxt-link to="/" class="navbar-brand" active-class="active">
       Frontend
-    </router-link>
+    </nuxt-link>
     <button
       class="navbar-toggler"
       type="button"
@@ -17,18 +17,16 @@
     </button>
     <div id="navbarNav" class="collapse navbar-collapse">
 
-
-
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <router-link to="/" class="nav-link">
+          <nuxt-link to="/" class="nav-link" active-class="active">
             Home
-          </router-link>
+          </nuxt-link>
         </li>
         <li class="nav-item">
-          <router-link to="/games" class="nav-link">
+          <nuxt-link to="/games" class="nav-link" active-class="active">
             Games
-          </router-link>
+          </nuxt-link>
         </li>
       </ul>
 
@@ -48,7 +46,13 @@
       </template>
 
       <template v-if="authenticated">
-
+        <b-modal id="modal-1" :title="user.name + ' information'" hide-footer>
+          <p class="my-4"><b>Email</b>: {{ user.email }}</p>
+          <p class="my-4" v-if="user.role === 1"><b>Role</b>: Administrator</p>
+          <p class="my-4" v-if="user.role === 0"><b>Role</b>: User</p>
+          <p class="my-4"><b>Games played</b>: {{ user.games_played }}</p>
+          <p class="my-4"><b>Badge</b>: {{ user.badge }}</p>
+        </b-modal>
         <ul class="navbar-nav">
           <li class="nav-item" v-if="user.role === 1">
             <nuxt-link to="/games/create" class="nav-link">
@@ -60,22 +64,18 @@
           <li class="nav-item">
             <div>
               <b-button v-b-modal.modal-1>{{ user.name }}</b-button>
-              <b-modal id="modal-1" :title="user.name + ' information'" hide-footer>
-                <p class="my-4"><b>Email</b>: {{ user.email }}</p>
-                <p class="my-4" v-if="user.role === 1"><b>Role</b>: Administrator</p>
-                <p class="my-4" v-if="user.role === 0"><b>Role</b>: User</p>
-                <p class="my-4"><b>Games played</b>: {{ user.games_played }}</p>
-                <p class="my-4"><b>Badge</b>: {{ user.badge }}</p>
-              </b-modal>
             </div>
           </li>
-          <li class="nav-item">
+          <li class="nav-item" style="cursor: pointer">
             <a @click.prevent="logout" class="nav-link">Logout</a>
           </li>
         </ul>
+
       </template>
     </div>
+
   </nav>
+
 </template>
 
 <script>

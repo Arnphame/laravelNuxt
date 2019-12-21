@@ -1,15 +1,15 @@
 
 <template>
-  <div class="container">
+  <div class="container col-md-4">
     <h2>Latest 5 games</h2>
-    <table class="table" v-for="(game, index) in games.data" :key="index">
+    <table class="table">
       <thead>
         <th>Location</th>
         <th>Starts at</th>
         <th>Status</th>
         <th></th>
       </thead>
-      <tbody>
+      <tbody v-for="(game, index) in games.data" :key="index">
         <tr>
           <td>{{ game.location}}</td>
           <td>{{ game.start_at}}</td>
