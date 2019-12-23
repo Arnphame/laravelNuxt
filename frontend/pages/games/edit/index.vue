@@ -10,7 +10,7 @@
       </div>
       <div class="form-group">
         <label><strong>Date:</strong></label>
-        <input type="text" class="form-control" v-model="game.start_at">
+        <VueCtkDateTimePicker format="YYYY-MM-DD HH:mm" minDate="2019-12-20 21:00" output-format="YYYY-MM-DD HH:mm" v-model="game.start_at" />
         <small v-if="errors.start_at" class="form-text text-danger">{{errors.start_at[0]}}</small>
       </div>
       <button class="btn btn-outline-success">Update</button>

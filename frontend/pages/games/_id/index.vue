@@ -1,7 +1,7 @@
 <template>
   <div class="container col-md-3 mt-5">
-    <h1>Game #{{game.id}}</h1>
-    <h1>Game status: {{game.status}}</h1>
+    <h3>Game #{{game.id}}</h3>
+    <h3>Game status: {{game.status}}</h3>
     <table class="table table-bordered" style="border-color:black !important;">
       <thead>
       <tr>
@@ -16,15 +16,27 @@
       </tr>
       </tbody>
     </table>
+    <!--<table v-if="game.matches.length !== 0" class="table table-bordered">-->
+      <!--<tr>-->
+        <!--<th>Team {{ game.matches[0].team }} players</th>-->
+        <!--<th>Team {{ game.matches[1].team }} players</th>-->
+      <!--</tr>-->
+      <!--<tbody>-->
+      <!--<tr>-->
+        <!--<td v-if="game.matches[0].players.length !== 0">{{ game.matches[0].players[0].name }} ({{ game.matches[0].players[0].badge }})</td>-->
+        <!--<td v-if="game.matches[1].players.length !== 0">{{ game.matches[1].players[0].name }} ({{ game.matches[1].players[0].badge }})</td>-->
+      <!--</tr>-->
+      <!--</tbody>-->
+    <!--</table>-->
     <table class="table table-bordered">
+      <thead>
       <tr>
-        <th>Team {{ game.matches[0].team }} players</th>
-        <th>Team {{ game.matches[1].team }} players</th>
+        <th>Players</th>
       </tr>
-      <tbody>
+      </thead>
+      <tbody v-for="(user,index) in (game.users)" :key="index">
       <tr>
-        <td>{{ game.matches[0].players[0].name }} ({{ game.matches[0].players[0].badge }})</td>
-        <td>{{ game.matches[1].players[0].name }} ({{ game.matches[1].players[0].badge }})</td>
+        <td>{{ user.name }} ({{ user.badge }})</td>
       </tr>
       </tbody>
     </table>
@@ -64,6 +76,16 @@ export default {
               }
           })
           return check
+      },
+      userHasMatch: function()
+      {
+        let check = false
+        this.game.matches.forEach((gameUser) => {
+          if (gameUser.id === this.user.id) {
+            check = true
+          }
+        })
+        return check
       }
   },
   methods: {
