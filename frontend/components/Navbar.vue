@@ -1,7 +1,7 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-dark mb-5 text-white" style="z-index: 10; background-color: rgba(0,0,0,0.3)">
+  <nav class="navbar navbar-expand-lg navbar-dark mb-5 text-white bg-secondary" style="z-index: 10;">
 
-    <nuxt-link to="/" class="navbar-brand" active-class="active">
+    <nuxt-link to="/" class="navbar-brand">
       Frontend
     </nuxt-link>
     <button
@@ -19,12 +19,12 @@
 
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <nuxt-link to="/" class="nav-link" active-class="active">
+          <nuxt-link to="/" class="nav-link">
             Home
           </nuxt-link>
         </li>
         <li class="nav-item">
-          <nuxt-link to="/games" class="nav-link" active-class="active">
+          <nuxt-link to="/games" class="nav-link">
             Games
           </nuxt-link>
         </li>

@@ -20,7 +20,15 @@
     "nuxt": "^2.10.2",
     "nuxt-fontawesome": "^0.4.0",
     "vue": "^2.6.11",
+<<<<<<< HEAD
     "vue-template-compiler": "^2.6.11"
+=======
+    "vue-bootstrap-datetimepicker": "^5.0.1",
+    "vue-ctk-date-time-picker": "^2.4.0",
+    "vue-loader": "^15.8.3",
+    "vue-template-compiler": "^2.6.11",
+    "vuejs-datepicker": "^1.6.2"
+>>>>>>> fa053c018e98a4ba32a66d3ae11632f429aa68a5
   },
   "devDependencies": {
     "@nuxtjs/eslint-config": "^1.0.1",

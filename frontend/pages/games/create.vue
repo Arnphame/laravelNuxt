@@ -11,7 +11,9 @@
       </div>
       <div class="form-group">
         <label><strong>Starts at:</strong></label>
-        <input type="datetime-local" v-model="form.start_at" class="form-control"/>
+        <VueCtkDateTimePicker format='YYYY-MM-DD hh:mm' output-format="YYYY-MM-DD hh:mm" v-model="form.start_at" />
+
+        <!--<input type="datetime-local" value="2018-02-25T19:24" v-model="form.start_at" class="form-control"/>-->
         <!-- needs fix -->
         <small v-if="errors.start_at" class="form-text text-danger">{{ errors.start_at[0] }}</small>
       </div>
@@ -24,6 +26,8 @@
 </template>
 
 <script>
+
+
 export default {
   middleware: ['auth'],
   data () {
@@ -36,9 +40,10 @@ export default {
   },
   methods: {
     async create () {
+      console.log(this.form.start_at)
       try {
         await this.$axios.$post('/games', this.form)
-        return this.$router.push('/')
+        return this.$router.push('/games')
       } catch (e) {}
     }
   }
