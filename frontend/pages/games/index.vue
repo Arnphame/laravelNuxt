@@ -1,8 +1,10 @@
-
+<script>
+  import 'bootstrap/dist/css/bootstrap.css'
+</script>
 <template>
   <div class="container col-md-4">
-    <h2>Latest 5 games</h2>
-    <table class="table">
+    <h2 class="red-text">Latest 5 games</h2>
+    <table class="table padding-bt">
       <thead>
         <th>Location</th>
         <th>Starts at</th>

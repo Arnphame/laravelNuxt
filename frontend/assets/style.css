@@ -24,7 +24,6 @@ footer {
   position: absolute;
   bottom: 0;
   width: 100%;
-  position: fixed;
   height: 80px;
   background-color: rgba(0,0,0,0.3) !important;
 }
@@ -63,5 +62,12 @@ footer a:hover{
 .layout-enter,
 .layout-leave-active {
   opacity: 0
+}
+
+.red-text {
+  color: red !important;
+}
+.padding-bt {
+  padding-bottom: 200px !important;
 }
 

@@ -10,7 +10,6 @@
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
 import Vue from 'vue'
-
 import BootstrapVue from 'bootstrap-vue'
 
 Vue.use(BootstrapVue)
